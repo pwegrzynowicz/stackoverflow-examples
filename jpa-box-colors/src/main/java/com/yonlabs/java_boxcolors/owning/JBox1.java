@@ -1,19 +1,26 @@
-package com.yonlabs.boxcolors;
+package com.yonlabs.java_boxcolors.owning;
 
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "box")
-public class Box {
+public class JBox1 {
 
     @Id
     Integer id;
 
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "box_id", referencedColumnName = "id")
-    List<Color> colors = new ArrayList<>();
+    List<JColor1> colors = new ArrayList<>();
+
+    public JBox1() {
+    }
+
+    public JBox1(Integer id, List<JColor1> colors) {
+        this.id = id;
+        this.colors = colors;
+    }
 
     public Integer getId() {
         return id;
@@ -23,11 +30,11 @@ public class Box {
         this.id = id;
     }
 
-    public List<Color> getColors() {
+    public List<JColor1> getColors() {
         return colors;
     }
 
-    public void setColors(List<Color> colors) {
+    public void setColors(List<JColor1> colors) {
         this.colors = colors;
     }
 
