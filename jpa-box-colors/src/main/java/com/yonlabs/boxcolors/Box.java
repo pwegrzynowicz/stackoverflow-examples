@@ -12,7 +12,7 @@ public class Box {
     Integer id;
 
     @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name ="box_id", referencedColumnName ="id")
+    @JoinColumn(name = "box_id", referencedColumnName = "id")
     List<Color> colors = new ArrayList<>();
 
     public Integer getId() {
